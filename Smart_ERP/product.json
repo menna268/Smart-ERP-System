@@ -1,0 +1,716 @@
+[
+    {
+        "product_id": 2,
+        "name": "Wireless Mouse",
+        "price": 250.0,
+        "quantity": 0,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 3,
+        "name": "Mechanical Keyboard",
+        "price": 850,
+        "quantity": 15,
+        "low_stock_limit": 4
+    },
+    {
+        "product_id": 5,
+        "name": "USB-C Hub",
+        "price": 350.0,
+        "quantity": 25,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 4,
+        "name": "27-inch Monitor",
+        "price": 4500,
+        "quantity": 8,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 6,
+        "name": "External Hard Drive 1TB",
+        "price": 1200,
+        "quantity": 12,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 7,
+        "name": "NVMe SSD 512GB",
+        "price": 950,
+        "quantity": 18,
+        "low_stock_limit": 4
+    },
+    {
+        "product_id": 8,
+        "name": "HD Webcam 1080p",
+        "price": 600,
+        "quantity": 2,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 9,
+        "name": "Gaming Headset",
+        "price": 750,
+        "quantity": 9,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 10,
+        "name": "Wi-Fi Router Dual Band",
+        "price": 800,
+        "quantity": 14,
+        "low_stock_limit": 4
+    },
+    {
+        "product_id": 11,
+        "name": "Laser Printer",
+        "price": 3200,
+        "quantity": 4,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 12,
+        "name": "A4 Paper Ream (500 sheets)",
+        "price": 120,
+        "quantity": 50,
+        "low_stock_limit": 10
+    },
+    {
+        "product_id": 13,
+        "name": "Black Toner Cartridge",
+        "price": 450,
+        "quantity": 3,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 14,
+        "name": "Ergonomic Office Chair",
+        "price": 2800,
+        "quantity": 7,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 15,
+        "name": "Adjustable Office Desk",
+        "price": 4200,
+        "quantity": 2,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 16,
+        "name": "Cat6 Network Cable 305m",
+        "price": 1100,
+        "quantity": 6,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 17,
+        "name": "RJ45 Connectors Pack (100pcs)",
+        "price": 80,
+        "quantity": 30,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 18,
+        "name": "UPS Power Supply 1000VA",
+        "price": 2100,
+        "quantity": 6,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 19,
+        "name": "Barcode Scanner",
+        "price": 650,
+        "quantity": 11,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 20,
+        "name": "Thermal Receipt Printer",
+        "price": 1300,
+        "quantity": 8,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 21,
+        "name": "Thermal Paper Roll Pack (10)",
+        "price": 150,
+        "quantity": 40,
+        "low_stock_limit": 8
+    },
+    {
+        "product_id": 22,
+        "name": "Cash Drawer",
+        "price": 850,
+        "quantity": 5,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 23,
+        "name": "HDMI Cable 3m",
+        "price": 90,
+        "quantity": 35,
+        "low_stock_limit": 10
+    },
+    {
+        "product_id": 24,
+        "name": "Power Bank 20000mAh",
+        "price": 550,
+        "quantity": 16,
+        "low_stock_limit": 4
+    },
+    {
+        "product_id": 25,
+        "name": "Bluetooth Speaker",
+        "price": 400,
+        "quantity": 12,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 26,
+        "name": "Desk Lamp LED",
+        "price": 220,
+        "quantity": 20,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 27,
+        "name": "Microphone Condenser",
+        "price": 900,
+        "quantity": 7,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 28,
+        "name": "Graphics Tablet",
+        "price": 1800,
+        "quantity": 5,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 29,
+        "name": "RAM DDR4 16GB",
+        "price": 850,
+        "quantity": 22,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 30,
+        "name": "Motherboard ATX",
+        "price": 3100,
+        "quantity": 6,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 31,
+        "name": "Intel Core i7 CPU",
+        "price": 7200,
+        "quantity": 8,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 32,
+        "name": "NVIDIA RTX 3060 GPU",
+        "price": 11500,
+        "quantity": 3,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 33,
+        "name": "PC Power Supply 650W",
+        "price": 1400,
+        "quantity": 10,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 34,
+        "name": "PC Tower Case",
+        "price": 1100,
+        "quantity": 7,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 35,
+        "name": "CPU Cooler Liquid",
+        "price": 1600,
+        "quantity": 5,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 36,
+        "name": "Thermal Paste 4g",
+        "price": 60,
+        "quantity": 45,
+        "low_stock_limit": 10
+    },
+    {
+        "product_id": 37,
+        "name": "Flash Drive 64GB",
+        "price": 130,
+        "quantity": 50,
+        "low_stock_limit": 10
+    },
+    {
+        "product_id": 38,
+        "name": "MicroSD Card 128GB",
+        "price": 210,
+        "quantity": 30,
+        "low_stock_limit": 6
+    },
+    {
+        "product_id": 39,
+        "name": "Cable Management Ties (100pcs)",
+        "price": 40,
+        "quantity": 60,
+        "low_stock_limit": 15
+    },
+    {
+        "product_id": 40,
+        "name": "Surge Protector Power Strip",
+        "price": 300,
+        "quantity": 18,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 41,
+        "name": "Wireless Presenter Pointer",
+        "price": 280,
+        "quantity": 12,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 42,
+        "name": "Whiteboard 120x90cm",
+        "price": 650,
+        "quantity": 4,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 43,
+        "name": "Whiteboard Markers Set",
+        "price": 75,
+        "quantity": 25,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 44,
+        "name": "Paper Shredder",
+        "price": 1400,
+        "quantity": 3,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 45,
+        "name": "Laminating Machine A4",
+        "price": 950,
+        "quantity": 5,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 46,
+        "name": "Laminating Pouches (100pcs)",
+        "price": 180,
+        "quantity": 15,
+        "low_stock_limit": 4
+    },
+    {
+        "product_id": 47,
+        "name": "Stapler Heavy Duty",
+        "price": 160,
+        "quantity": 20,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 48,
+        "name": "Staples Box (5000pcs)",
+        "price": 35,
+        "quantity": 40,
+        "low_stock_limit": 10
+    },
+    {
+        "product_id": 49,
+        "name": "Paper Puncher 2-Hole",
+        "price": 95,
+        "quantity": 15,
+        "low_stock_limit": 4
+    },
+    {
+        "product_id": 50,
+        "name": "A4 Plastic Folders Pack (12)",
+        "price": 60,
+        "quantity": 35,
+        "low_stock_limit": 8
+    },
+    {
+        "product_id": 51,
+        "name": "Safety Helmet Yellow",
+        "price": 180,
+        "quantity": 25,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 52,
+        "name": "Safety Glasses Clear",
+        "price": 45,
+        "quantity": 50,
+        "low_stock_limit": 10
+    },
+    {
+        "product_id": 53,
+        "name": "Work Gloves Leather Pair",
+        "price": 70,
+        "quantity": 40,
+        "low_stock_limit": 8
+    },
+    {
+        "product_id": 54,
+        "name": "High-Visibility Vest",
+        "price": 85,
+        "quantity": 30,
+        "low_stock_limit": 6
+    },
+    {
+        "product_id": 55,
+        "name": "Safety Boots Size 43",
+        "price": 650,
+        "quantity": 12,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 56,
+        "name": "Digital Multimeter",
+        "price": 320,
+        "quantity": 10,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 57,
+        "name": "Soldering Iron Kit",
+        "price": 290,
+        "quantity": 8,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 58,
+        "name": "Screwdriver Set 24-in-1",
+        "price": 190,
+        "quantity": 22,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 59,
+        "name": "Adjustable Wrench 10-inch",
+        "price": 140,
+        "quantity": 15,
+        "low_stock_limit": 4
+    },
+    {
+        "product_id": 60,
+        "name": "Pliers Set 3-Piece",
+        "price": 230,
+        "quantity": 11,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 61,
+        "name": "Tape Measure 5m",
+        "price": 50,
+        "quantity": 35,
+        "low_stock_limit": 8
+    },
+    {
+        "product_id": 62,
+        "name": "Digital Caliper 150mm",
+        "price": 270,
+        "quantity": 9,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 63,
+        "name": "Cordless Drill 18V",
+        "price": 1850,
+        "quantity": 6,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 64,
+        "name": "Drill Bit Set 16-Piece",
+        "price": 210,
+        "quantity": 14,
+        "low_stock_limit": 4
+    },
+    {
+        "product_id": 65,
+        "name": "Hot Glue Gun 60W",
+        "price": 110,
+        "quantity": 18,
+        "low_stock_limit": 4
+    },
+    {
+        "product_id": 66,
+        "name": "Glue Sticks Pack (20pcs)",
+        "price": 45,
+        "quantity": 50,
+        "low_stock_limit": 10
+    },
+    {
+        "product_id": 67,
+        "name": "WD-40 Lubricant Spray 400ml",
+        "price": 130,
+        "quantity": 28,
+        "low_stock_limit": 6
+    },
+    {
+        "product_id": 68,
+        "name": "Duct Tape Heavy Duty",
+        "price": 65,
+        "quantity": 40,
+        "low_stock_limit": 8
+    },
+    {
+        "product_id": 69,
+        "name": "Electrical Insulation Tape Pack",
+        "price": 35,
+        "quantity": 60,
+        "low_stock_limit": 12
+    },
+    {
+        "product_id": 70,
+        "name": "Zip Ties Black Pack (100)",
+        "price": 30,
+        "quantity": 70,
+        "low_stock_limit": 15
+    },
+    {
+        "product_id": 71,
+        "name": "Industrial Fan 18-inch",
+        "price": 850,
+        "quantity": 7,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 72,
+        "name": "Fire Extinguisher 6kg",
+        "price": 1100,
+        "quantity": 5,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 73,
+        "name": "First Aid Kit Box",
+        "price": 350,
+        "quantity": 10,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 74,
+        "name": "Barcode Label Roll (1000 labels)",
+        "price": 90,
+        "quantity": 30,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 75,
+        "name": "Packaging Tape Transparent",
+        "price": 25,
+        "quantity": 80,
+        "low_stock_limit": 15
+    },
+    {
+        "product_id": 76,
+        "name": "Bubble Wrap Roll 50m",
+        "price": 240,
+        "quantity": 12,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 77,
+        "name": "Cardboard Box Large Pack (10)",
+        "price": 150,
+        "quantity": 25,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 78,
+        "name": "Hand Pallet Truck 2.5 Ton",
+        "price": 8500,
+        "quantity": 2,
+        "low_stock_limit": 1
+    },
+    {
+        "product_id": 79,
+        "name": "Step Ladder Aluminum 5-Step",
+        "price": 750,
+        "quantity": 4,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 80,
+        "name": "Plastic Storage Bin Heavy Duty",
+        "price": 110,
+        "quantity": 30,
+        "low_stock_limit": 6
+    },
+    {
+        "product_id": 81,
+        "name": "Smart Tablet 10-inch",
+        "price": 4200,
+        "quantity": 9,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 82,
+        "name": "Tablet Stand Metal",
+        "price": 180,
+        "quantity": 15,
+        "low_stock_limit": 4
+    },
+    {
+        "product_id": 83,
+        "name": "Stylus Pen Universal",
+        "price": 120,
+        "quantity": 20,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 84,
+        "name": "CCTV Camera Outdoor 4K",
+        "price": 1250,
+        "quantity": 8,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 85,
+        "name": "DVR Recorder 8-Channel",
+        "price": 2100,
+        "quantity": 4,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 86,
+        "name": "Surveillance HDD 2TB",
+        "price": 1600,
+        "quantity": 6,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 87,
+        "name": "Biometric Time Attendance Device",
+        "price": 1950,
+        "quantity": 3,
+        "low_stock_limit": 1
+    },
+    {
+        "product_id": 88,
+        "name": "RFID Access Cards Pack (50)",
+        "price": 250,
+        "quantity": 15,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 89,
+        "name": "Door Access Control Lock",
+        "price": 800,
+        "quantity": 5,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 90,
+        "name": "Walkie Talkie Pair",
+        "price": 1400,
+        "quantity": 6,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 91,
+        "name": "Cleaning Air Blower 600W",
+        "price": 380,
+        "quantity": 11,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 92,
+        "name": "Microfiber Cleaning Cloths (10)",
+        "price": 50,
+        "quantity": 40,
+        "low_stock_limit": 10
+    },
+    {
+        "product_id": 93,
+        "name": "Screen Cleaner Spray Kit",
+        "price": 40,
+        "quantity": 50,
+        "low_stock_limit": 12
+    },
+    {
+        "product_id": 94,
+        "name": "AA Rechargeable Batteries (4pcs)",
+        "price": 160,
+        "quantity": 25,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 95,
+        "name": "Battery Charger Smart",
+        "price": 220,
+        "quantity": 10,
+        "low_stock_limit": 3
+    },
+    {
+        "product_id": 96,
+        "name": "Extension Cord 5 meters",
+        "price": 170,
+        "quantity": 20,
+        "low_stock_limit": 4
+    },
+    {
+        "product_id": 97,
+        "name": "Air Conditioner Portable 12K",
+        "price": 9800,
+        "quantity": 3,
+        "low_stock_limit": 1
+    },
+    {
+        "product_id": 98,
+        "name": "Water Dispenser Hot/Cold",
+        "price": 2900,
+        "quantity": 4,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 99,
+        "name": "Espresso Coffee Machine",
+        "price": 3500,
+        "quantity": 3,
+        "low_stock_limit": 1
+    },
+    {
+        "product_id": 100,
+        "name": "Coffee Beans Bag 1kg",
+        "price": 280,
+        "quantity": 18,
+        "low_stock_limit": 5
+    },
+    {
+        "product_id": 102,
+        "name": "Laptop",
+        "price": 1000.0,
+        "quantity": 6,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 103,
+        "name": "Laptop",
+        "price": 1000.0,
+        "quantity": 8,
+        "low_stock_limit": 2
+    },
+    {
+        "product_id": 104,
+        "name": "Test Product",
+        "price": 500.0,
+        "quantity": 10,
+        "low_stock_limit": 3
+    }
+]

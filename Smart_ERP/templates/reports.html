@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart ERP | Reports</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='reports.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+    <div class="logo">
+
+    <i class="fa-solid fa-chart-line"></i>
+    Smart ERP
+
+</div>
+
+
+    <ul>
+
+       {% if role in ["Admin", "Manager"] %}
+
+<li>
+    <a href="{{ url_for('dashboard') }}">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+    </a>
+</li>
+
+{% endif %}
+
+
+        <li>
+            <a href="{{ url_for('inventory') }}">
+                <i class="fa-solid fa-box"></i>
+                Inventory
+            </a>
+        </li>
+
+
+        <li>
+            <a href="{{ url_for('sales') }}">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Sales
+            </a>
+        </li>
+
+
+        <li class="active">
+            <a href="{{ url_for('reports') }}">
+                <i class="fa-solid fa-file-lines"></i>
+                Reports
+            </a>
+        </li>
+
+<li>
+        <a href="{{ url_for('logout') }}">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+    </li>
+
+
+    </ul>
+
+
+</aside>
+
+
+
+    <!-- Main Content -->
+
+    <main class="main">
+
+
+        <header>
+
+            <h1>
+                Reports
+            </h1>
+
+            <p>
+                Generate and view system reports
+            </p>
+
+        </header>
+
+
+
+        <!-- Report Cards -->
+
+
+        <section class="report-cards">
+
+
+            <div class="card">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <h3>
+                    Summary Report
+                </h3>
+
+                <p>
+                    View general statistics about the system.
+                </p>
+
+                <button onclick="showReport('summary')">
+    View Report
+</button>
+
+            </div>
+
+
+
+
+            <div class="card">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                <h3>
+                    Sales Report
+                </h3>
+
+                <p>
+                    Analyze sales and revenue details.
+                </p>
+
+<button onclick="showReport('sales')">
+    View Report
+</button>
+
+            </div>
+
+
+
+
+            <div class="card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>
+                    Employee Report
+                </h3>
+
+                <p>
+                    Review employee performance.
+                </p>
+<button onclick="showReport('employee')">
+    View Report
+</button>
+
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- Report Result Area -->
+
+
+        <section class="report-result">
+
+
+            <h2>
+                Report Result
+            </h2>
+
+
+            <div class="result-box">
+
+
+                <p>
+                    Select a report to display data here.
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+</div>
+
+<script>
+
+function showReport(type){
+
+
+fetch("/generate_report/" + type)
+
+
+.then(response => response.json())
+
+
+.then(data => {
+
+
+let box = document.querySelector(".result-box");
+
+
+
+if(type === "summary"){
+
+
+box.innerHTML = `
+
+<div class="summary-cards">
+
+
+<div class="report-card">
+<h3>Total Products</h3>
+<p>${data.report.total_products}</p>
+</div>
+
+
+<div class="report-card">
+<h3>Total Sales</h3>
+<p>${data.report.total_sales}</p>
+</div>
+
+
+<div class="report-card">
+<h3>Total Employees</h3>
+<p>${data.report.total_employees}</p>
+</div>
+
+
+<div class="report-card">
+<h3>Profit</h3>
+<p>$${data.report.profit}</p>
+</div>
+
+
+</div>
+
+`;
+
+}
+
+
+
+else if(type === "sales"){
+
+
+let html = `
+
+<table>
+
+<tr>
+<th>Invoice ID</th>
+<th>Date</th>
+<th>Total Price</th>
+</tr>
+
+`;
+
+
+data.report.forEach(sale => {
+
+
+html += `
+
+<tr>
+
+<td>${sale.invoice_id}</td>
+
+<td>${sale.date}</td>
+
+<td>$${sale.total_price}</td>
+
+</tr>
+
+`;
+
+
+});
+
+
+html += "</table>";
+
+box.innerHTML = html;
+
+
+}
+
+
+
+
+else if(type === "employee"){
+
+
+let html = `
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Position</th>
+<th>Salary</th>
+</tr>
+
+`;
+
+
+data.report.forEach(emp => {
+
+
+html += `
+
+<tr>
+
+<td>${emp.name}</td>
+
+<td>${emp.position}</td>
+
+<td>${emp.salary}</td>
+
+</tr>
+
+`;
+
+
+});
+
+
+html += "</table>";
+
+box.innerHTML = html;
+
+
+}
+
+
+
+});
+
+
+}
+
+
+</script>
+</body>
+
+</html>

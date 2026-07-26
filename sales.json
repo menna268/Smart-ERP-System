@@ -1,0 +1,50 @@
+[
+    {
+        "invoice_id": 1,
+        "sale": {
+            "date": "2026-07-25 18:26:48",
+            "products": [
+                {
+                    "product_id": 1,
+                    "name": "Laptop Dell",
+                    "price": 15000,
+                    "quantity": 2,
+                    "total price": 30000
+                }
+            ],
+            "total_price": 30000
+        }
+    },
+    {
+        "invoice_id": 2,
+        "sale": {
+            "date": "2026-07-25 18:27:42",
+            "products": [
+                {
+                    "product_id": 1,
+                    "name": "Laptop Dell",
+                    "price": 15000,
+                    "quantity": 4,
+                    "total price": 60000
+                }
+            ],
+            "total_price": 60000
+        }
+    },
+    {
+        "invoice_id": 3,
+        "sale": {
+            "date": "2026-07-26 17:33:32",
+            "products": [
+                {
+                    "product_id": 11,
+                    "name": "Laser Printer",
+                    "price": 3200,
+                    "quantity": 1,
+                    "total price": 3200
+                }
+            ],
+            "total_price": 3200
+        }
+    }
+]

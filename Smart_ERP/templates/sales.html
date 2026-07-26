@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart ERP | Sales</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='sales.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <h2 class="logo">
+            <i class="fa-solid fa-chart-line"></i>
+            Smart ERP
+        </h2>
+
+        <ul>
+
+            {% if role in ["Admin", "Manager"] %}
+
+<li>
+    <a href="{{ url_for('dashboard') }}">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+    </a>
+</li>
+
+{% endif %}
+
+
+
+            <li>
+                <a href="{{ url_for('sales') }}">
+    <i class="fa-solid fa-cart-shopping"></i>
+    Sales
+</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('inventory') }}">
+                    <i class="fa-solid fa-warehouse"></i>
+                    Inventory
+                </a>
+            </li>
+
+
+            {% if role in ["Admin", "Manager"] %}
+
+        <li>
+          <a href="{{ url_for('reports') }}">
+    <i class="fa-solid fa-file-lines"></i>
+    Reports
+</a>
+        </li>
+         {% endif %}
+
+            <li>
+                <a href="{{ url_for('logout') }}">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+<main class="main">
+
+<header>
+
+<div>
+
+<h1>Sales Management</h1>
+
+<p>Manage all company sales.</p>
+
+</div>
+
+<div class="top-actions">
+
+<form method="GET" action="{{ url_for('sales') }}">
+
+
+<input
+type="text"
+name="search"
+placeholder="Search Sale"
+value="{{ request.args.get('search','') }}">
+
+<button type="submit">
+
+<i class="fa-solid fa-search"></i>
+
+</button>
+
+</form>
+
+<button class="add-btn" onclick="openSaleModal()">
+
+    <i class="fa-solid fa-plus"></i>
+
+    New Sale
+
+</button>
+
+
+
+</div>
+
+</header>
+<section class="cards">
+
+<div class="card">
+
+<h3>Total Sales</h3>
+
+<span>{{ total_sales }}</span>
+
+</div>
+
+<div class="card">
+
+<h3>Total Revenue</h3>
+
+<span>${{ total_revenue }}</span>
+
+</div>
+
+<div class="card">
+
+<h3>Orders Today</h3>
+
+<span>{{ today_sales }}</span>
+
+</div>
+
+<div class="card">
+
+<h3>Customers</h3>
+
+<span>{{ customers }}</span>
+
+</div>
+
+</section>
+  <section class="sales-table">
+
+<h2>Sales History</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+    <th>Date</th>
+
+    <th>Products</th>
+
+    <th>Quantity</th>
+
+    <th>Total Price</th>
+
+    {% if role != "Employee" %}
+    <th>Actions</th>
+    {% endif %}
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% if sales %}
+
+    {% for sale in sales %}
+
+    <tr>
+
+        <td>{{ sale.sale.date }}</td>
+
+        <td>
+            {% for product in sale.sale.products %}
+                {{ product.name }}<br>
+            {% endfor %}
+        </td>
+
+        <td>
+            {% for product in sale.sale.products %}
+                {{ product.quantity }}<br>
+            {% endfor %}
+        </td>
+
+        <td>
+            ${{ sale.sale.total_price }}
+        </td>
+
+        {% if role != "Employee" %}
+        <td>
+
+            <a href="#" class="view">
+                <i class="fa-solid fa-file-invoice"></i>
+            </a>
+
+            <a href="#" class="delete">
+                <i class="fa-solid fa-trash"></i>
+            </a>
+
+        </td>
+        {% endif %}
+
+    </tr>
+
+    {% endfor %}
+
+{% else %}
+
+<tr>
+
+    <td colspan="{% if role != 'Employee' %}5{% else %}4{% endif %}" class="no-sales">
+        No sales found.
+    </td>
+
+</tr>
+
+{% endif %}
+
+</tbody>
+</table>
+
+</section>
+
+</main>
+<div id="saleModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeSaleModal()">&times;</span>
+
+<h2>Create New Sale</h2>
+
+<form method="POST" action="{{ url_for('add_sale') }}">
+
+<select name="product_id">
+
+{% for product in products %}
+
+<option value="{{ product.product_id }}">
+{{ product.name }}
+</option>
+
+{% endfor %}
+
+</select>
+
+<input
+type="number"
+name="quantity"
+placeholder="Quantity"
+required>
+
+<button type="submit">
+
+Complete Sale
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+<!-- =========================
+        Invoice Modal
+========================= -->
+
+<div id="invoiceModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeInvoice()">&times;</span>
+
+        <h2>Invoice</h2>
+
+        <hr>
+
+        <p><strong>Invoice ID:</strong> <span id="invoice_id"></span></p>
+
+        <p><strong>Date:</strong> <span id="invoice_date"></span></p>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="invoice_products">
+
+            </tbody>
+
+        </table>
+
+        <h3>
+
+            Total :
+            $<span id="invoice_total"></span>
+
+        </h3>
+
+        <button onclick="window.print()">
+
+            Print Invoice
+
+        </button>
+
+    </div>
+
+</div>
+<script>
+
+function openSaleModal(){
+
+    document.getElementById("saleModal").style.display = "flex";
+
+}
+
+function closeSaleModal(){
+
+    document.getElementById("saleModal").style.display = "none";
+
+}
+
+
+function openInvoice(invoice){
+
+    document.getElementById("invoiceModal").style.display = "flex";
+
+    document.getElementById("invoice_id").innerText =
+    invoice.invoice_id;
+
+    document.getElementById("invoice_date").innerText =
+    invoice.sale.date;
+
+    document.getElementById("invoice_total").innerText =
+    "$" + invoice.sale.total_price;
+
+    let tbody = document.getElementById("invoice_products");
+
+    tbody.innerHTML = "";
+
+    invoice.sale.products.forEach(function(product){
+
+        tbody.innerHTML += `
+            <tr>
+                <td>${product.name}</td>
+                <td>$${product.price}</td>
+                <td>${product.quantity}</td>
+                <td>$${product["total price"]}</td>
+            </tr>
+        `;
+
+    });
+
+}
+
+
+function closeInvoice(){
+
+    document.getElementById("invoiceModal").style.display = "none";
+
+}
+
+</script>
+
+{% if invoice %}
+<script>
+
+window.onload = function(){
+
+    const invoiceData = JSON.parse('{{ invoice | tojson | safe }}');
+
+    openInvoice(invoiceData);
+
+}
+
+</script>
+{% endif %}
+</body>
+
+</html>

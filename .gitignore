@@ -1,0 +1,6 @@
+.venv/
+.idea/
+Smart_ERP/.idea/
+Smart_ERP/.venv/
+__pycache__/
+*.pyc

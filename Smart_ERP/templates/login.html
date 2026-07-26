@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart ERP | Login</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Left Side -->
+
+    <div class="left-side">
+
+        <div class="logo">
+            <h1>Smart ERP</h1>
+        </div>
+
+        <h2>Welcome Back!</h2>
+
+        <p>
+            Manage your inventory, products, employees and sales
+            in one professional ERP system.
+        </p>
+
+    </div>
+
+
+    <!-- Right Side -->
+
+    <div class="right-side">
+
+        <form method="POST">
+
+            <h2>Login</h2>
+
+            <p class="subtitle">
+                Sign in to continue
+            </p>
+
+            {% if error %}
+
+    <div class="error">
+
+         {{ error }}
+
+    </div>
+
+        {% endif %}
+
+            <div class="input-box">
+
+                <label>Username</label>
+
+                <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter Username"
+                        required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Password</label>
+
+                <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter Password"
+                        required>
+
+            </div>
+
+            <button type="submit">
+
+                Login
+
+            </button>
+
+        </form>
+
+
+        <!-- Demo Accounts -->
+
+        <div class="demo-accounts">
+
+            <h3>Demo Accounts</h3>
+
+            <p class="demo-text">
+                Use one of the following demo accounts to explore the system.
+            </p>
+
+            <div class="cards">
+
+                <div class="demo-card admin">
+
+                    <h4>👑 Admin</h4>
+
+                    <p><strong>Username:</strong> admin</p>
+
+                    <p><strong>Password:</strong> 12345</p>
+
+                </div>
+
+                <div class="demo-card manager">
+
+                    <h4>👨‍💼 Manager</h4>
+
+                    <p><strong>Username:</strong> manager</p>
+
+                    <p><strong>Password:</strong> 1234</p>
+
+                </div>
+
+                <div class="demo-card employee">
+
+                    <h4>👨‍💻 Employee</h4>
+
+                    <p><strong>Username:</strong> employee</p>
+
+                    <p><strong>Password:</strong> 123</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

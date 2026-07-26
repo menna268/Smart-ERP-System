@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart ERP Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <h2 class="logo">
+            <i class="fa-solid fa-chart-line"></i>
+            Smart ERP
+        </h2>
+
+        <ul>
+
+            {% if role in ["Admin", "Manager"] %}
+
+<li>
+    <a href="{{ url_for('dashboard') }}">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+    </a>
+</li>
+
+{% endif %}
+
+
+            <li>
+               <a href="{{ url_for('sales') }}">
+    <i class="fa-solid fa-cart-shopping"></i>
+    Sales
+</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('inventory') }}">
+                    <i class="fa-solid fa-warehouse"></i>
+                    Inventory
+                </a>
+            </li>
+
+
+            {% if role in ["Admin", "Manager"] %}
+
+        <li>
+          <a href="{{ url_for('reports') }}">
+    <i class="fa-solid fa-file-lines"></i>
+    Reports
+</a>
+        </li>
+         {% endif %}
+
+            <li>
+                <a href="{{ url_for('logout') }}">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- ================= Main Content ================= -->
+
+    <main class="main-content">
+
+        <header>
+
+    <div class="welcome">
+
+        <h2>Dashboard</h2>
+
+        <p>
+            Welcome Back,
+            <strong>{{ username }}</strong>
+        </p>
+
+        <small>
+            Role: {{ role }}
+        </small>
+
+    </div>
+
+
+    {% if role == "Manager" %}
+
+    <button class="add-user-btn" onclick="openUserModal()">
+
+        <i class="fa-solid fa-user-plus"></i>
+
+        Add User
+
+    </button>
+
+    {% endif %}
+
+</header>
+
+
+
+        <!-- ================= Statistics ================= -->
+
+        <section class="cards">
+
+            <article class="card">
+
+                <h3>Total Products</h3>
+
+                <span>{{ total_products }}</span>
+
+            </article>
+
+            <article class="card">
+
+                <h3>Total Customers</h3>
+
+                <span>{{ total_employees }}</span>
+
+            </article>
+
+            <article class="card">
+
+                <h3>Total Sales</h3>
+
+                <span>{{ total_sales }}</span>
+
+            </article>
+
+            <article class="card">
+
+                <h3>Total Revenue</h3>
+
+                <span>${{ total_revenue }}</span>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- ================= Recent Sales ================= -->
+
+        <section class="recent-sales">
+
+            <h2>Recent Sales</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Invoice ID</th>
+                        <th>Date</th>
+                        <th>Product</th>
+                        <th>Total Price</th>
+
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+{% for sale in recent_sales %}
+
+<tr>
+
+    <td>#{{ sale.invoice_id }}</td>
+
+    <td>{{ sale.sale.date }}</td>
+
+    <td>{{ sale.sale.products[0].name }}</td>
+
+    <td>${{ sale.sale.total_price }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+{% if role == "Manager" %}
+
+<div id="userModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeUserModal()">
+            &times;
+        </span>
+
+
+        <h2>Add New User</h2>
+
+
+        <form method="POST" action="{{ url_for('add_user') }}">
+
+
+            <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            required>
+
+
+
+            <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required>
+
+
+
+            <select name="role" required>
+
+                <option value="Employee">
+                    Employee
+                </option>
+
+
+                <option value="Manager">
+                    Manager
+                </option>
+
+
+                <option value="Admin">
+                    Admin
+                </option>
+
+            </select>
+
+
+
+            <button type="submit">
+
+                Create User
+
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+{% endif %}
+<script>
+    function openUserModal(){
+
+    document.getElementById("userModal").style.display="flex";
+
+}
+
+
+function closeUserModal(){
+
+    document.getElementById("userModal").style.display="none";
+
+}
+</script>
+</body>
+</html>
