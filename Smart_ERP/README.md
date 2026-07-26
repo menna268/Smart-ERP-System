@@ -44,7 +44,7 @@ A professional ERP (Enterprise Resource Planning) web application built using Fl
 
 ## Login
 
-![Login](screenshots/login.png)
+![Login](screenshots/login.PNG)
 
 ## Dashboard
 
@@ -56,11 +56,11 @@ A professional ERP (Enterprise Resource Planning) web application built using Fl
 
 ## Sales
 
-![Sales](screenshots/sales.png)
+![Sales](screenshots/sales.PNG)
 
 ## Reports
 
-![Reports](screenshots/reports.png)
+![Reports](screenshots/reports.PNG)
 
 ## Installation
 
