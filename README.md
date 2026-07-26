@@ -65,13 +65,13 @@ A professional ERP (Enterprise Resource Planning) web application built using Fl
 ## Installation
 
 ```bash
-git clone https://github.com/USERNAME/Smart_ERP.git
+git clone https://github.com/menna268/Smart-ERP-System.git
 
-cd Smart_ERP
+cd Smart-ERP-System
 
 pip install -r requirements.txt
 
-python app.py
+python Smart_ERP//app.py
 ```
 
 ## Author
